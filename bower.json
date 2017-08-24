@@ -1,0 +1,21 @@
+{
+  "name": "twitchapp",
+  "description": "",
+  "main": "index.html",
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "hover": "^2.1.1"
+  },
+  "dependencies": {
+    "hover": "^2.1.1",
+    "font-awesome": "^4.7.0"
+  }
+}

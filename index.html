@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html ng-app='myApp' lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="bower_components/sweetalert/dist/sweetalert.css">
+  <link rel="stylesheet" href="css/main.min.css">
+
+  <script src="bower_components/angular/angular.min.js"></script>
+  <script src="bower_components/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="scripts/controller.js"></script>
+  <title>Twitch Streamers</title>
+</head>
+
+<body ng-controller="twitchController as tc">
+
+  <div class="container" ng-init="tc.twitchGet()">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="streamerBox center-block">
+          <div class="header">
+            <h1><b>Twitch Streamers</b></h1>
+            <button class="btn btn-default" ng-click="tc.userGroup = tc.all">All</button>
+            <button class="btn btn-default" ng-click="tc.userGroup = tc.online">Online</button>
+            <button class="btn btn-default" ng-click="tc.userGroup = tc.offline">Offline</button>
+            <form class="form-inline">
+              <div class="form-group">
+                <label for="search">Search Within: </label>
+                <input type="text" ng-model="tc.user" class="form-control" id="search" placeholder="Ex. Freecodecamp">
+              </div>
+              <button type="submit" class="btn btn-default" ng-click="tc.searchUser()">Search</button>
+            </form>
+          </div> <!-- end header -->
+          <div class="col-md-12 streamers" ng-repeat="streamers in tc.userGroup | filter: tc.user | orderBy: 'name'">
+            <div class="col-md-2">
+              <img ng-src="{{ streamers.logo }}" class="img-circle">
+            </div>
+            <div class="col-md-10">
+              <p><a href="{{ streamers.url }}" target="blank">{{ streamers.name }}</a></p>
+              <thing ng-show="streamers.status"><p>{{ streamers.status }}</p></thing>
+              <thing ng-show="streamers.status === null">Offline</thing>
+            </div>
+          </div> <!-- end streamers -->
+        </div> <!-- end streamerBox -->
+      </div> <!-- end col-md-12 -->
+    </div> <!-- end row -->
+  </div> <!-- end container -->
+
+</body>
+
+</html>

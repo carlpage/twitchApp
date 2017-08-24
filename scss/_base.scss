@@ -1,0 +1,63 @@
+@import 'variables';
+
+body {
+  color: black;
+  background-color: $bg;
+}
+
+.streamerBox {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  margin-top: 3rem;
+  text-align: center;
+  max-width: 750px;
+  border: 1px solid black;
+}
+
+.header {
+  input {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  h1 {
+    padding-left: 2rem;
+    text-align: center;
+  }
+} // end header
+
+.streamers {
+  display: block;
+  border-right: 1px solid black;
+  border-left: 1px solid black;
+  border-top: 1px solid black;
+  max-width: 750px;
+  p {
+    display: inline;
+    padding-right: 2rem;
+    padding-top: 1.8rem;
+    &:first-child {
+      float: left;
+    }
+    &:last-child {
+      float: right;
+    }
+  } // end p
+  img {
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    height: 6rem;
+    float: left;
+  }
+  a {
+    color: black;
+    &:hover {
+      color: black;
+    }
+  } // end a
+  &:last-child {
+    border-bottom: 1px solid black;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    margin-bottom: 3rem;
+  }
+} // end streamers
