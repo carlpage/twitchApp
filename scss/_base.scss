@@ -6,6 +6,7 @@ body {
 }
 
 .streamerBox {
+  background-color: white;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   margin-top: 3rem;
@@ -26,6 +27,8 @@ body {
 } // end header
 
 .streamers {
+  background-color: white;
+
   display: block;
   border-right: 1px solid black;
   border-left: 1px solid black;
