@@ -3,7 +3,7 @@
   "description": "",
   "main": "index.html",
   "license": "ISC",
-  "homepage": "",
+  "homepage": "https://github.com/carlpage/twitchApp",
   "ignore": [
     "**/.*",
     "node_modules",
